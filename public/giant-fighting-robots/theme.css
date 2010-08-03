@@ -37,7 +37,17 @@ body > ol > li.done {
 
 ol ul li {
 	background: #333;
+	border-color: #666;
 }
+
+body > ol > li.handson {
+	background: url('stripe.png');
+}
+body > ol > li.handson.current {
+	border-color: orange;
+}
+
+
 
 .numpoints ol {
 	color: white;

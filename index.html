@@ -50,11 +50,9 @@
     <h2>Automated testing == GIANT FIGHTING ROBOTS.</h2>
   </li>
   
-  <!-- What is unit testing specifically? -->
-  
-  <!-- Some terms -->
-  
-  <!-- A simple test with QUnit -->
+  <li class="impact">
+    <h2>QUnit == Unit testing.</h2>
+  </li>  
   
   <li class="impact">
     <h2>The benefits of testing are threefold.</h2>
@@ -64,10 +62,73 @@
     <h2>Firstly, the very act of writing tests forces you to <em>formalise</em> and <em>rationalise</em> your design decisions ahead of time.</h2>
   </li>
   
-  <!-- Hands on: Writing a list of tests for a class.
-      1. The QUnit Template
-      2. Writing a QUnit test
-   -->
+  <li class="handson">
+    <h2>Writing your first QUnit test</h2>
+    
+    <ul>
+      <li><a href="public/test/template.test.html">The QUnit template</a></li>
+    </ul>
+    
+    <code><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;QUnit Test Suite&lt;/title&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;qunit.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot;&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;jquery-1.4.2.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script type=&quot;text/javascript&quot; src=&quot;qunit.js&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h1 id=&quot;qunit-header&quot;&gt;QUnit Test Suite&lt;/h1&gt;
+	&lt;h2 id=&quot;qunit-banner&quot;&gt;&lt;/h2&gt;
+	&lt;div id=&quot;qunit-testrunner-toolbar&quot;&gt;&lt;/div&gt;
+	&lt;h2 id=&quot;qunit-userAgent&quot;&gt;&lt;/h2&gt;
+	&lt;ol id=&quot;qunit-tests&quot;&gt;&lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></code>
+  </li>
+  
+  <li class="handson">
+    <h2>Writing your first QUnit test</h2>
+        
+    <code><pre>&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+
+      test(&quot;The name of the test&quot;, function() {
+        // test content goes here
+      })  
+
+    });
+&lt;/script&gt;</pre></code>
+  </li>
+  
+  <li class="handson">
+    <h2>Writing your first QUnit test</h2>
+    
+    <ul>
+      <li><a href="public/test/simple.test.html">Basic QUnit tests</a></li>
+    </ul>
+    
+    <code><pre>&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+
+      // A simple test that passes
+      test(&quot;A passing test&quot;, function() {
+        var foo = &quot;bar&quot;;
+        equals(&quot;bar&quot;, foo, &quot;foo should be set to &#x27;bar&#x27;&quot;);
+      })
+
+      // A simple test that fails
+      test(&quot;A failing test&quot;, function() {
+        var foo = &quot;bar&quot;;
+        equals(&quot;not bar&quot;, foo, &quot;foo should be set to &#x27;bar&#x27;&quot;);
+      })      
+
+    });
+  &lt;/script&gt;</pre></code>
+  </li>
+  
+  <!-- QUnit Assertions -->
   
   <li class="impact">
     <h2>Secondly, a set of tests form a powerful type of <em>documentation</em>.</h2>
@@ -97,6 +158,10 @@
   
   <!-- Hands on: Running through the test cycle -->
   
+  <!-- Advanced: Modules, setups, teardowns -->
+  
+  <!-- Advanced concepts: mocks and fixtures -->
+  
   <li>
     <h2>Testing in other languages</h2>
     <ul>
@@ -108,6 +173,7 @@
     </ul>
   </li>
     
+  <!-- Further reading -->
 
   <li>
     <h2>You will ask questions now.</h2>

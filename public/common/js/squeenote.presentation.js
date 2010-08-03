@@ -172,10 +172,12 @@ squeenote.Presentation.prototype = {
     var i = 0;
     
     // Append the slide index to the location
-    var loc = window.location.href.toString();
-    var url = loc.split("#")[0];
-    var anchor = loc.split("#")[1];
-    window.location = url+"#slide-"+index;    
+    if(index) {
+      var loc = window.location.href.toString();
+      var url = loc.split("#")[0];
+      var anchor = loc.split("#")[1];
+      window.location = url+"#slide-"+index;    
+    }
     
     // Do the slide iteration
     $(this.jq_slide_selector).each(function() {
