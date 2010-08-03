@@ -1,0 +1,51 @@
+body {
+	background: url('4097787955_0f5f1d36f5_b.jpeg');
+	background-position: bottom left;
+	background-repeat: none;
+	background-color: black;
+}
+
+body > ol > li {
+	background: #000;
+}
+body > ol > li * {
+	color: #EFEFEF;
+}
+
+body > ol > li h1, body > ol > li h2, body > ol > li h3, body > ol > li h4 {
+	text-shadow: none;
+}
+
+body > ol > li.impact * {
+	margin-top: 150px;
+}
+body > ol > li.impact em {
+	color: orange;
+}
+
+body > ol > li.current {
+	border-color: #FFF;
+}
+
+body > ol > li.pending {
+	border-color: #666;
+}
+
+body > ol > li.done {
+	border-color: #666;
+}
+
+ol ul li {
+	background: #333;
+}
+
+.numpoints ol {
+	color: white;
+	list-style-type: default;
+	width: 400px;
+	margin: 100px auto 0 auto;
+	font-size: 1.5em;
+}
+	.numpoints ol li:last-child {
+		color: green;
+	}

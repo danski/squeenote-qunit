@@ -7,14 +7,14 @@
   <meta name="viewport" content="user-scalable=no, width=device-width">
 
   <!-- Common dependencies -->
-  <script type="text/javascript" src="/public/common/js/jquery-1.4.2.min.js"></script>
-  <script type="text/javascript" src="/public/common/js/jquery-ui-1.8.2.custom.min.js"></script>
-  <script type="text/javascript" src="/public/common/js/socket.io.js"></script>
+  <script type="text/javascript" src="public/common/js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="public/common/js/jquery-ui-1.8.2.custom.min.js"></script>
+  <script type="text/javascript" src="public/common/js/socket.io.js"></script>
   <!-- Squeenote core -->
-  <script type="text/javascript" src="/public/common/js/squeenote.device.js"></script>
-  <script type="text/javascript" src="/public/common/js/squeenote.presentation.js"></script>
-  <script type="text/javascript" src="/public/common/js/squeenote.ui.js"></script>
-  <link rel="stylesheet" href="/public/common/css/controls.css" type="text/css" media="screen" title="no title" charset="utf-8">  
+  <script type="text/javascript" src="public/common/js/squeenote.device.js"></script>
+  <script type="text/javascript" src="public/common/js/squeenote.presentation.js"></script>
+  <script type="text/javascript" src="public/common/js/squeenote.ui.js"></script>
+  <link rel="stylesheet" href="public/common/css/controls.css" type="text/css" media="screen" title="no title" charset="utf-8">  
   <!-- Boot Squeenote -->
   <script type="text/javascript">
     $(document).ready(function() {
@@ -27,12 +27,13 @@
   </script>
 
   <!-- Theme files -->
-  <script type="text/javascript" src="/public/squeenote-default/theme.js"></script>
-  <link rel="stylesheet" href="/public/squeenote-default/theme.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <script type="text/javascript" src="public/squeenote-default/theme.js"></script>
+  <link rel="stylesheet" href="public/squeenote-default/theme.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="public/giant-fighting-robots/theme.css" type="text/css" media="screen" />
   <link media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" 
-        href="/public/squeenote-default/theme.ext.ipad.css" type="text/css" rel="stylesheet">
+        href="public/squeenote-default/theme.ext.ipad.css" type="text/css" rel="stylesheet">
   <link media="only screen and (max-device-width: 480px)"
-        href="/public/squeenote-default/theme.ext.iphone.css" type="text/css" rel="stylesheet" />
+        href="public/squeenote-default/theme.ext.iphone.css" type="text/css" rel="stylesheet" />
 
   
 </head>
@@ -42,33 +43,71 @@
       <h1>Unit testing with Javascript and QUnit</h1>
       <h3>Or: GIANT FIGHTING ROBOTS</h3>
       <p><a href="http://github.com/danski/squeenote-qunit">Download at http://github.com/danski/squeenote-qunit</a></p>
+      <p>Background image courtesy <a href="http://www.flickr.com/photos/ariels_photos/4097787955/">http://www.flickr.com/photos/ariels_photos/4097787955/</a></p>
     </li>
 
-  <li>
-    <h2>Presentation == a web page.</h2>
-    
-    <p>A Squeenote presentation is just an ordered list. Each item in the list is a slide.</p>
-    
-    <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-  &lt;title&gt;My presentation&lt;/title&gt;
-  ...
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      Slide 1
-    &lt;/li&gt;
-    &lt;li&gt;
-      Slide 2
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+  <li class="impact">
+    <h2>Automated testing == GIANT FIGHTING ROBOTS.</h2>
   </li>
   
+  <!-- What is unit testing specifically? -->
   
+  <!-- Some terms -->
+  
+  <!-- A simple test with QUnit -->
+  
+  <li class="impact">
+    <h2>The benefits of testing are threefold.</h2>
+  </li>
+    
+  <li class="impact">
+    <h2>Firstly, the very act of writing tests forces you to <em>formalise</em> and <em>rationalise</em> your design decisions ahead of time.</h2>
+  </li>
+  
+  <!-- Hands on: Writing a list of tests for a class.
+      1. The QUnit Template
+      2. Writing a QUnit test
+   -->
+  
+  <li class="impact">
+    <h2>Secondly, a set of tests form a powerful type of <em>documentation</em>.</h2>
+  </li>
+  
+  <!-- VJ experience with testing -->
+  
+  <!-- Hands-on: Making sure the tests and their results read nicely.
+      1. Assertions
+      2. Failure messages-->
+  
+  <li class="impact">
+    <h2>And finally, tests allow you to make <em>rapid changes</em> in full awareness of any breakages they cause.</h2>
+  </li>
+  
+  <li class="numpoints">
+    <h2>The testing cycle</h2>
+    
+    <ol>
+      <li value="10">Write test list</li>
+      <li value="20">Write code</li>
+      <li value="30">Write tests for code</li>
+      <li value="40">Run tests</li>
+      <li value="50">GOTO 20</li>
+    </ol>
+  </li>
+  
+  <!-- Hands on: Running through the test cycle -->
+  
+  <li>
+    <h2>Testing in other languages</h2>
+    <ul>
+      <li>Ruby: <a href="http://ruby-doc.org/core/classes/Test/Unit.html">Test::Unit</a>, <a href="http://rspec.info/">RSpec</a>, <a href="http://github.com/thoughtbot/shoulda">Shoulda</a></li>
+      <li>Java: <a href="http://www.junit.org/">JUnit</a></li>
+      <li>Actionscript: <a href="http://opensource.adobe.com/wiki/display/flexunit/FlexUnit;jsessionid=8AF38DE756E79FADD45E631AF4C25A31">FlexUnit</a></li>
+      <li>Cocoa/Obj-C: <a href="http://developer.apple.com/tools/unittest.html">OCUnit</a></li>
+      <li>And billions more besides. When it comes to frameworks, an old saying applies. &quot;There's one born every minute.&quot;</li>
+    </ul>
+  </li>
+    
 
   <li>
     <h2>You will ask questions now.</h2>
