@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUnit Test Suite</title>
+	<link rel="stylesheet" href="qunit.css" type="text/css" media="screen">
+	<script type="text/javascript" src="../common/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="qunit.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      
+      // Here we're adding assertions to our empty tests.
+      
+      module("Velociraptor");
+      
+      test("Beats anything *except zombies* in a fight", function() {
+        narwhalFightResult = raptor.beats("narwhal");
+        zombieFightResult = raptor.beats("zombie");
+        
+        ok(narwhalFightResult, "A raptor can beat a narwhal");
+        ok(!zombieFightResult, "A raptor will catch the infection and become a velocirombie.")
+      });
+      
+      test("Enjoys eating unicorn meat", function() {
+        unicornMeatResult = raptor.eat("unicorn meat");
+        
+        equals(unicornMeatResult, "NOM NOM NOM");
+      });      
+      
+    });
+  </script>
+
+</head>
+<body>
+	<h1 id="qunit-header">QUnit Test Suite</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+</body>
+</html>

@@ -47,11 +47,11 @@
     </li>
 
   <li class="impact">
-    <h2>Automated testing == GIANT FIGHTING ROBOTS.</h2>
+    <h2>Automated testing == <em>GIANT FIGHTING ROBOTS</em>.</h2>
   </li>
   
   <li class="impact">
-    <h2>QUnit == Unit testing.</h2>
+    <h2>QUnit == <em>Unit testing</em>.</h2>
   </li>  
   
   <li class="impact">
@@ -102,8 +102,14 @@
 &lt;/script&gt;</pre></code>
   </li>
   
+  <!-- QUnit Assertions -->
+  
+  <li class="impact">
+    <h2>Secondly, a set of tests form a powerful type of <em>documentation</em>.</h2>
+  </li>
+  
   <li class="handson">
-    <h2>Writing your first QUnit test</h2>
+    <h2>Assertions</h2>
     
     <ul>
       <li><a href="public/test/simple.test.html">Basic QUnit tests</a></li>
@@ -128,23 +134,47 @@
   &lt;/script&gt;</pre></code>
   </li>
   
-  <!-- QUnit Assertions -->
-  
   <li class="impact">
-    <h2>Secondly, a set of tests form a powerful type of <em>documentation</em>.</h2>
+    <h2>Well-written tests are an excellent <em>design contract</em> between developers.</h2>
   </li>
   
-  <!-- VJ experience with testing -->
-  
-  <!-- Hands-on: Making sure the tests and their results read nicely.
-      1. Assertions
-      2. Failure messages-->
+  <li class="handson">
+    <h2>QUnit assertions</h2>
+    
+    <ul>
+      <li>ok(state), equals(actual, expected), same(actual, expected)</li>
+    </ul>
+    
+    <code><pre>&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function(){
+
+      test(&quot;A passing test&quot;, function() {
+        var foo = &quot;bar&quot;;
+        var truthiness = true;
+        
+        var animals_1 = [&quot;monkey&quot;, &quot;giraffe&quot;, &quot;bar&quot;];
+        var animals_2 = [&quot;monkey&quot;, &quot;giraffe&quot;, &quot;bar&quot;];
+        
+        // This test will fail unless the variable foo equals "bar".      
+        equals(&quot;bar&quot;, foo, &quot;foo should be set to &#x27;bar&#x27;&quot;);
+        
+        // This test will fail if truthiness is false or null
+        ok(truthiness, &quot;truthiness should be truthy&quot;);
+        
+        // This test will fail if animals_1 and animals_2 have different contents
+        same(animals_1, animals_2, &quot;the animal arrays should have identical contents&quot;)
+        
+      })
+
+    });
+  &lt;/script&gt;</pre></code>
+  </li>
   
   <li class="impact">
     <h2>And finally, tests allow you to make <em>rapid changes</em> in full awareness of any breakages they cause.</h2>
   </li>
   
-  <li class="numpoints">
+  <li class="numpoints handson">
     <h2>The testing cycle</h2>
     
     <ol>
@@ -156,11 +186,21 @@
     </ol>
   </li>
   
-  <!-- Hands on: Running through the test cycle -->
-  
-  <!-- Advanced: Modules, setups, teardowns -->
-  
-  <!-- Advanced concepts: mocks and fixtures -->
+  <li class="numpoints">
+    <h2>The maintenance cycle</h2>
+    
+    <ol>
+      <li value="50">Deploy new code</li>
+      <li value="60">Find a bug</li>
+      <li value="70">Fix the bug</li>
+      <li value="80">Add more tests</li>
+      <li value="90">GOTO 50</li>
+    </ol>
+  </li>
+    
+  <li class="impact">
+    <h2>Better collaboration, better documentation, and your code will smell nicer. <em>What's not to like?</em></h2>
+  </li>
   
   <li>
     <h2>Testing in other languages</h2>

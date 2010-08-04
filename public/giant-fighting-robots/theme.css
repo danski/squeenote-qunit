@@ -19,8 +19,9 @@ body > ol > li h1, body > ol > li h2, body > ol > li h3, body > ol > li h4 {
 body > ol > li.impact * {
 	margin-top: 150px;
 }
-body > ol > li.impact em {
+body > ol > li em {
 	color: orange;
+	font-style: normal;
 }
 
 body > ol > li.current {
