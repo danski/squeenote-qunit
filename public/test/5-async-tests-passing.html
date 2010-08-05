@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>QUnit Test Suite</title>
+	<title>Async passing</title>
 	<link rel="stylesheet" href="qunit.css" type="text/css" media="screen">
 	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="accordian_menu_animated.jquery.js"></script>
@@ -51,7 +51,7 @@
         
           var link_index = 0;
           
-          var interval = window.setInterval(function() {
+          var interval = setInterval(function() {
             
             var list_item = $(list_items[link_index]);
             var link = $("h2 a", list_item);

@@ -38,11 +38,7 @@ jQuery.fn.accordianMenu = function() {
           sibling_li = jQuery(this);
           sibling_li.children("[data-accordian!=link_container]").slideUp();
         })
-      })
-      
-      // Hide the contents apart from the first link and whatever contains it
-      
-      
+      })      
       
     }
   });

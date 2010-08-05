@@ -40,10 +40,6 @@ jQuery.fn.accordianMenu = function() {
         })
       })
       
-      // Hide the contents apart from the first link and whatever contains it
-      
-      
-      
     }
   });
   
