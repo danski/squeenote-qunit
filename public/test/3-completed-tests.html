@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUnit Test Suite</title>
+	<link rel="stylesheet" href="qunit.css" type="text/css" media="screen">
+	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="accordian_menu.jquery.js"></script>
+	<script type="text/javascript" src="qunit.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      
+      var accordian;
+      var list_items;
+      $("#test-accordian").accordianMenu();
+      
+      module("Accordian menu", {
+        setup: function() {
+          accordian = $("#test-accordian");
+          list_items = $("li", accordian);
+        }
+      });
+      
+      test("Works on unordered lists", function() {
+        ok(accordian.hasClass("accordian"), "Plugin adds the class 'accordian' to the list element");
+      });
+      
+      test("Looks for the first link in each list item and binds to the click event on it", function() {
+        links = $("#item_one a", accordian);
+        links.each(function(index) {
+          link = $(this);
+          if(index == 0) {
+            ok(link.data("events").click, "First link has a click event bound to it");
+          } else {
+            ok(!link.data("events"), "Subsequent links have no click event bound to them")
+          }
+        })
+      });
+      
+      test("Hides all the content except the first link and it's parent", function() {
+        list_items.each(function(index) {
+          list_item = $(this);
+          
+          equals($("h2:visible", list_item).length, 1, "The h2 should be visible");
+          equals($("p:hidden", list_item).length, 1, "The p should be hidden");
+        });
+      });
+      
+      test("Clicking the first link in a list item shows the entire contents of that list item and hides all other item contents", function() {
+        
+        // Loop over each link and simulate a click, ensuring that the right things are hidden
+        list_items.each(function(index, element) {
+          list_item = $(this);
+          link = $("h2 a", list_item);
+          
+          // Fire the event
+          link.click();
+          
+          // Now check what happened
+          list_items.each(function(check_index, check_element) {
+            check_list_item = $(this);
+            
+            if(element == check_element) {
+              // Content should be visible
+              equals($("p:visible", check_list_item).length, 1, "When clicking item "+index+", The p in item "+check_index+" should be visible");
+            } else {
+              // Content should be hidden
+              equals($("p:hidden", check_list_item).length, 1, "When clicking item "+index+", The p in item "+check_index+"  be hidden");
+            }
+          })          
+        });                
+        
+      });
+      
+    });
+  </script>
+
+</head>
+<body>
+	<h1 id="qunit-header">QUnit Test Suite</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	
+	<ul id="test-accordian">
+	  <li id="item_one">
+	    <h2><a href="one.html">Item one</a></h2>
+	    <p>Contents of item <a href="one.html">one</a></p>
+	  </li>
+	  <li>
+	    <h2><a href="two.html">Item two</a></h2>
+	    <p>Contents of item two</p>
+	  </li>
+	  <li>
+	    <h2><a href="three.html">Item three</a></h2>
+	    <p>Contents of item three</p>
+	  </li>
+	  <li>
+	    <h2><a href="four.html">Item four</a></h2>
+	    <p>Contents of item four</p>
+	  </li>
+	</ul>
+</body>
+</html>

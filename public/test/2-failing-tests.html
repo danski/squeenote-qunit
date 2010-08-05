@@ -3,7 +3,7 @@
 <head>
 	<title>QUnit Test Suite</title>
 	<link rel="stylesheet" href="qunit.css" type="text/css" media="screen">
-	<script type="text/javascript" src="../common/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="qunit.js"></script>
 
   <script type="text/javascript">
@@ -11,21 +11,19 @@
       
       // Here we're adding assertions to our empty tests.
       
-      module("Velociraptor");
+      module("Accordian menu");
       
-      test("Beats anything *except zombies* in a fight", function() {
-        narwhalFightResult = raptor.beats("narwhal");
-        zombieFightResult = raptor.beats("zombie");
-        
-        ok(narwhalFightResult, "A raptor can beat a narwhal");
-        ok(!zombieFightResult, "A raptor will catch the infection and become a velocirombie.")
+      test("Works on unordered lists", function() {
       });
       
-      test("Enjoys eating unicorn meat", function() {
-        unicornMeatResult = raptor.eat("unicorn meat");
-        
-        equals(unicornMeatResult, "NOM NOM NOM");
-      });      
+      test("Looks for the first link in each list item and binds to the click event on it", function() {
+      });
+      
+      test("Hides all the content except the first link and it's parent", function() {
+      });
+      
+      test("Clicking the first link in a list item shows the entire contents of that list item and hides all other item contents", function() {
+      }); 
       
     });
   </script>
@@ -37,5 +35,24 @@
 	<div id="qunit-testrunner-toolbar"></div>
 	<h2 id="qunit-userAgent"></h2>
 	<ol id="qunit-tests"></ol>
+	
+	<ul id="test-accordian">
+	  <li>
+	    <h2><a href="one.html">Item one</a></h2>
+	    <p>Contents of item one</p>
+	  </li>
+	  <li>
+	    <h2><a href="two.html">Item two</a></h2>
+	    <p>Contents of item two</p>
+	  </li>
+	  <li>
+	    <h2><a href="three.html">Item three</a></h2>
+	    <p>Contents of item three</p>
+	  </li>
+	  <li>
+	    <h2><a href="four.html">Item four</a></h2>
+	    <p>Contents of item four</p>
+	  </li>
+	</ul>
 </body>
 </html>

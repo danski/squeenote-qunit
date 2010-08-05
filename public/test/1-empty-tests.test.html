@@ -3,7 +3,7 @@
 <head>
 	<title>QUnit Test Suite</title>
 	<link rel="stylesheet" href="qunit.css" type="text/css" media="screen">
-	<script type="text/javascript" src="../common/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="qunit.js"></script>
 
   <script type="text/javascript">
@@ -15,13 +15,22 @@
       
       // In this case we're writing some tests for a class called Velociraptor
       
-      module("Velociraptor");
+      module("Accordian menu");
       
-      test("Beats anything *except zombies* in a fight", function() {
+      test("Works on unordered lists", function() {
       });
       
-      test("Enjoys eating unicorn meat", function() {
-      });      
+      test("Looks for the first link in each list item and binds to the click event on it", function() {
+      });
+      
+      test("Hides all the content except the first link and it's parent", function() {
+      });
+      
+      test("Clicking the first link in a list item shows the entire contents of that list item", function() {
+      });
+      
+      test("Clicking the first link in a list item hides the content of all other list items", function() {
+      });
       
     });
   </script>
